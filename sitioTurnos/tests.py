@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Usuario
+from .models import Usuario, Especialidad
 # Create your tests here.
 
 class UsuarioTestCase(TestCase):
@@ -17,3 +17,14 @@ class UsuarioTestCase(TestCase):
     def test_usuario_str(self):
         usuario = Usuario.objects.get(dni="12345678")
         self.assertEqual(usuario.__str__(), "12345678")
+
+class EspecialidadTestCase(TestCase):
+    def setUp(self):
+        Usuario.objects.create(
+            id_especialidad=1,
+            nombre_especialidad="ALISADO PELO CORTO"
+        )
+
+    def test_especialidad_str(self):
+        especialidad = Especialidad.objects.get(nombre_especialidad="ALISADO PELO CORTO")
+        self.assertEqual(especialidad.__str__(), "ALISADO PELO CORTO")
