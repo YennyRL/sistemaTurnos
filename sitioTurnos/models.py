@@ -24,14 +24,14 @@ class Servicio(models.Model):
     id_servicio=models.AutoField(primary_key=True)
     nombre_servicio=models.CharField(max_length=100)
     duracion_servicio=models.FloatField(max_length=15)
-    id_especialidad=models.AutoField(foreign_key=True)
-    id_profesional=models.AutoField(foreign_key=True)
+    #id_especialidad=models.AutoField(foreign_key=True)
+    #id_profesional=models.AutoField(foreign_key=True)
 
     def __str__(self):
         return self.nombre_servicio 
 
 class Agenda(models.Model):
-    id_profesional=models.AutoField(foreign_key=True)
+    #id_profesional=models.AutoField(foreign_key=True)
     dias_laborales=models.DateField(max_length=15) 
     horario_disponible=models.FloatField(max_length=15)
     def __str__(self):
