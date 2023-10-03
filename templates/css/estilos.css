@@ -10,3 +10,7 @@ form{
 ul{
     list-style: none;
 }
+
+.form-control{
+    padding-right: 160px;
+}
