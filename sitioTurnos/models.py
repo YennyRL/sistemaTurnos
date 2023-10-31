@@ -11,7 +11,7 @@ class Usuario(models.Model):
     numero_telefono = models.CharField(max_length=15)
 
     def __str__(self):
-        return self.dni
+        return self.nombre
 
 class Especialidad(models.Model):
     id_especialidad=models.AutoField(primary_key=True)
@@ -43,3 +43,9 @@ class Profesional(models.Model):
     apellido=models.CharField(max_length=30)
     def __str__(self):
         return self.nombre
+    
+class Turno(models.Model):
+    id_turno=models.AutoField(primary_key=True)
+    dni_usuario=models.CharField(max_length=8)
+    def __str__(self):
+        return self.id_turno
