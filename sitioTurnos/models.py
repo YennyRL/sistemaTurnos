@@ -11,7 +11,7 @@ class Usuario(models.Model):
     numero_telefono = models.CharField(max_length=15)
 
     def __str__(self):
-        return self.dni
+        return self.nombre
 
 class Especialidad(models.Model):
     id_especialidad=models.AutoField(primary_key=True)
