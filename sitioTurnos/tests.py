@@ -15,8 +15,8 @@ class UsuarioTestCase(TestCase):
         )
 
     def test_usuario_str(self):
-        usuario = Usuario.objects.get(dni="12345678")
-        self.assertEqual(usuario.__str__(), "12345678")
+        usuario = Usuario.objects.get(nombre="Aldo")
+        self.assertEqual(usuario.__str__(), "Aldo")
 
 class EspecialidadTestCase(TestCase):
     def setUp(self):

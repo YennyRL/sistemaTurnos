@@ -1,7 +1,6 @@
 from django.urls import path
-from .views import UsuarioRegistroView
+from . import views
 app_name="turnos"
 
 urlpatterns=[
-    path('', UsuarioRegistroView.as_view(), name='inicio')
-]
+    path('', views.reservar_turno, name='reservar_turno' )
