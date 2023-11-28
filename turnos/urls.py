@@ -21,6 +21,6 @@ from.views import Homeview
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', Homeview.as_view(), name="home"),
-    path('turno/', include('sitioTurnos.urls', namespace= "Turno"))
+    #path('', Homeview.as_view(), name="home"),
+    path('', include('sitioTurnos.urls'))
 ]

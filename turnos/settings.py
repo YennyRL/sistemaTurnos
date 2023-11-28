@@ -37,10 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-
-    'turnos', 
-    'sitioTurnos'
+    'django.contrib.staticfiles', 
+    'sitioTurnos',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'turnos.urls'
@@ -78,15 +78,21 @@ WSGI_APPLICATION = 'turnos.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'turnos',
-        'USER' : 'root',
-        'PASSWORD' : '',
-        'HOST' : '',
-        'PORT' : 3306,
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "sqlite3",
     }
 }
+#DATABASES = {
+ #   'default': {
+ #       'ENGINE': 'django.db.backends.mysql',
+ #       'NAME':'turnos',
+ #       'USER' : 'root',
+ #       'PASSWORD' : '',
+ #       'HOST' : '',
+ #       'PORT' : 3306,
+ #   }
+#}
 
 
 # Password validation

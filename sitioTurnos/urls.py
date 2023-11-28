@@ -1,7 +1,11 @@
-from django.urls import path
-from .views import UsuarioRegistroView
-app_name="turnos"
+from rest_framework import routers
+from .api import UsuarioViewSet, ServicioViewSet, ProfesionalViewSet, EspecialidadViewSet, TurnoViewSet
+router = routers.DefaultRouter()
 
-urlpatterns=[
-    path('', UsuarioRegistroView.as_view(), name='inicio')
-]
+router.register(r'api/Usuarios', UsuarioViewSet, basename='usuarios' )
+router.register(r'api/Servicios', ServicioViewSet, basename='servicios')
+router.register(r'api/Profesionales', ProfesionalViewSet, basename='profesionales')
+router.register(r'api/Especialidades', EspecialidadViewSet, basename='especialidades')
+router.register(r'api/Turnos', TurnoViewSet, basename='Turnos')
+
+urlpatterns = router.urls
