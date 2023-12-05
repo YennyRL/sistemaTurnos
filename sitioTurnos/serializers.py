@@ -19,7 +19,7 @@ class EspecialidadSerializer(serializers.ModelSerializer):
 class ServicioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Servicio
-        fields = ('id_servicio', 'nombre_servicio', 'duracion_servicio', 'especialidad', 'profesional_a_cargo',)
+        fields = ('id_servicio', 'nombre_servicio', 'duracion_servicio', 'especialidad','profesional_a_cargo',)
 
 class TurnoSerializer(serializers.ModelSerializer):
     class Meta:

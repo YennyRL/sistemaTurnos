@@ -1,16 +1,14 @@
-import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
-import { TurnoForm } from './pages/TurnoForm'
-import { EspecialidadesPage } from './pages/especialidadesPage'
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Navigate to="/turno"/>}/>
-        <Route path="/turno" element={<TurnoForm/>}/>
-        <Route path='/especialidades' element={<EspecialidadesPage/>}/>
-      </Routes>
-    </BrowserRouter>
-  )
-}
+import React from 'react';
+import TurnoForm from './pages/TurnoForm';
 
-export default App
+const App = () => {
+  return (
+    <body>
+    <div >
+      <TurnoForm />
+    </div>
+    </body>
+  );
+};
+
+export default App;

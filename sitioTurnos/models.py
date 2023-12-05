@@ -4,6 +4,7 @@ from django.db import models
 #las clases tienen este formato para luego persistir correctamente 
 # #en una bbdd
 class Usuario(models.Model):
+    id=models.AutoField(primary_key=True)
     dni = models.CharField(max_length=10)
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
@@ -25,8 +26,8 @@ class Agenda(models.Model):
     dias_laborales=models.DateField(max_length=15) 
     horario_disponible=models.FloatField(max_length=15)
     def __str__(self):
-        return  self.horario_disponible 
-    
+        return  self.horario_disponible
+     
 class Profesional(models.Model):
     id_profesional=models.AutoField(primary_key=True)
     nombre=models.CharField(max_length=30)
@@ -38,8 +39,8 @@ class Servicio(models.Model):
     id_servicio=models.AutoField(primary_key=True)
     nombre_servicio=models.CharField(max_length=100)
     duracion_servicio=models.DurationField()
-    profesional_a_cargo =models.ForeignKey(Profesional, on_delete= models.CASCADE)
     especialidad=models.ForeignKey(Especialidad, on_delete=models.CASCADE, null=True)
+    profesional_a_cargo=models.ForeignKey(Profesional, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.nombre_servicio 
